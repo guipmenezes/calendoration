@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+  <div class="container d-flex justify-content-between mt-4 mb-3">
+    <h1>Anotações</h1>
+    <%= link_to "New annotation", new_annotation_path, class:"btn btn-primary justify-content-center mt-2 mb-2" %>
+  </div>
+  
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Anotação</th>
+        <th>Criado em</th>
+        <th>Mostrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @annotations.each do |annotation| %>
+        <tr>
+          <th><%= annotation.id %></th>
+          <th><%= annotation.body %></th>
+          <th><%= l(annotation.created_at) %></th>
+          <th>
+            <%= link_to "Show this annotation", annotation, class:"btn btn-outline-secondary" %>
+          </th>
+        </tr> 
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= will_paginate @annotations, class: "page-item justify-content-center" %>
+</div>
