@@ -1,10 +1,12 @@
-<h1>Editing annotation</h1>
 
-<%= render "form", annotation: @annotation %>
+<div class="container">
+  <h1>Editando anotação</h1>
 
-<br>
+  <%= render "form", annotation: @annotation %>
+  <br>
 
-<div>
-  <%= link_to "Show this annotation", @annotation %> |
-  <%= link_to "Back to annotations", annotations_path %>
+  <div>
+    <%= link_to "Mostrar essa anotação", @annotation, class: "btn btn-success" %>
+    <%= link_to "Voltar para anotações", annotations_path, class:"btn btn-secondary" %>
+  </div>
 </div>

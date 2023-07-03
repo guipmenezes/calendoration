@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
+  <div class="mb-3 mt-3">
+    <%= form.label :body, class: "form-label" %>
+    <%= form.text_area :body, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit :"Adicionar anotação", class:"btn btn-primary" %>
   </div>
 <% end %>

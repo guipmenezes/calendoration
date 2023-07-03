@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @annotation %>
+<div class="container mt-4 p-5 bg-secondary text-white rounded shadow w-50">
+  <h3 class="pb-3"><%= @annotation.body %></h3>
+  <p><strong>Criado em:</strong> <%= l(@annotation.created_at) %></p>
+  <p><strong>Atualizado em:</strong> <%= l(@annotation.updated_at) %></p>
 
-<div>
-  <%= link_to "Edit this annotation", edit_annotation_path(@annotation) %> |
-  <%= link_to "Back to annotations", annotations_path %>
 
-  <%= button_to "Destroy this annotation", @annotation, method: :delete %>
+  <div class="d-flex justify-content-center">
+    <% render @annotation %>
+    <%= link_to "Editar anotação", edit_annotation_path(@annotation), class: "btn btn-success m-2" %>
+    <%= link_to "Voltar para anotações", annotations_path, class: "btn btn-primary m-2" %>
+    <%= button_to "Deletar anotação", @annotation, method: :delete, class: "btn btn-danger m-2" %>
+  </div>
 </div>
+

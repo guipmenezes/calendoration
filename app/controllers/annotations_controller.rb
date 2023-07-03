@@ -38,7 +38,7 @@ class AnnotationsController < ApplicationController
   def update
     respond_to do |format|
       if @annotation.update(annotation_params)
-        format.html { redirect_to annotation_url(@annotation), notice: "Annotation was successfully updated." }
+        format.html { redirect_to annotation_url(@annotation), notice: "Anotação foi atualizada com sucesso." }
         format.json { render :show, status: :ok, location: @annotation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class AnnotationsController < ApplicationController
     @annotation.destroy
 
     respond_to do |format|
-      format.html { redirect_to annotations_url, notice: "Annotation was successfully destroyed." }
+      format.html { redirect_to annotations_url, notice: "Anotação foi excluída com sucesso." }
       format.json { head :no_content }
     end
   end
